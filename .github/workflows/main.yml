@@ -1,18 +1,20 @@
-name: CI
+name: 'SWM GitHub Actions Basic'
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: push
 
 jobs:
-  build:
+  first-job:
+    name: 'First Job'
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Run pwd
-        run: pwd
+    - name: Say Hello World 1
+      shell: bash
+      run: |
+        echo "Hello World from step 1"
 
-      - name: Run ls -al
-        run: ls -al
+    - name: Say Hello World 2
+      shell: pwsh
+      run: |
+        echo "Hello World from step 2"
